@@ -12,28 +12,28 @@ const Navbar = (props) => {
     }
 
     return ( 
-        <nav>
-            <Link to="/">Home</Link>
-            {
-                contextState.userLogged ?
-                <>
-                    <Link to="/user/tasks" className="nav__link">Tasks</Link>
-                    <Link to="/user/addtasks" className="nav__link">Add Tasks</Link>
-                    <button className="main-btn" onClick={handleClickLogout}>Logout</button>
-                </>
-                :
-                <>
-                    <Link to="/login" className="nav__link">Login</Link>
-                    <Link to="/register" className="nav__link">Register</Link>
-                </>
-            }
-            <p>
-                {contextState.userLogged?
-                "Zalogowany"
-                :"Nie zalogowany"
+            <nav className="main-nav">
+                <Link to="/" className="main-nav__link">Home</Link>
+                {
+                    contextState.userLogged ?
+                    <>
+                        <Link to="/user/tasks" className="main-nav__link">Tasks</Link>
+                        <Link to="/user/addtasks" className="main-main-nav__link">Add Tasks</Link>
+                        <button className="main-btn" onClick={handleClickLogout}>Logout</button>
+                    </>
+                    :
+                    <>
+                        <Link to="/login" className="main-nav__link">Login</Link>
+                        <Link to="/register" className="main-nav__link">Register</Link>
+                    </>
                 }
-            </p>
-        </nav>
+                {/* <p>
+                    {contextState.userLogged?
+                    "Zalogowany"
+                    :"Nie zalogowany"
+                    }
+                </p> */}
+            </nav>
      );
 }
  

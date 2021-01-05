@@ -1,13 +1,25 @@
-import React, {useState}  from "react";
+import React, {useEffect, useState}  from "react";
 import firebase from 'firebase'
 import TasksList from "../../components/TasksList"
 import Alert from "../../components/Alert";
+
 
 const UserAddTasksPage = (props) => {
     const firestore = firebase.firestore()
     const [taskName, setTaskName] = useState("");
     const [tasks, setTasks] = useState([])
     const [error, setError] = useState("")
+
+    useEffect(()=>{
+        // firestore
+        //     .collection("tasks")
+        //     .where("uid","==", firebase.auth().currentUser.uid)
+        //     .get()
+        //     .then(u =>{
+        //         if(!u.empty)
+        //             props.history.push("/user/tasks")
+        //     })
+    },[])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -44,15 +56,21 @@ const UserAddTasksPage = (props) => {
             })
     }
 
+    const handleClickDeleteTask = (index) =>{
+        const updatedTasks = tasks.filter((t,i) => i !== index)
+        setTasks([...updatedTasks])
+    }
+
     return (
-        <div>
+        <div className="container">
         <form onSubmit={handleSubmit}>
-            <input 
+            <input
+                className="form__data" 
                 type="text"
                 value={taskName}
                 placeholder="Add habit"
                 onChange={handleChange} />
-            <button type="submit">Add</button>
+            <button className="main-btn" type="submit">Add</button>
         </form>
         {
             error != ""?
@@ -63,13 +81,17 @@ const UserAddTasksPage = (props) => {
             null
         }
        
-        <button onClick={handleClickSave}>Save</button>
-        <ul>
+        <button className="main-btn"onClick={handleClickSave}>Save</button>
+        {/* <ul>
             {tasks.map((task, index) =>{
                 return <li key={index}>{task}</li>
             })}
-        </ul>
-            <TasksList listType="addTasks" tasks={tasks} />
+        </ul> */}
+            <TasksList 
+                listType="addTasks" 
+                tasks={tasks} 
+                handleClickDeleteTask={handleClickDeleteTask}
+            />
         </div>
     )
 }

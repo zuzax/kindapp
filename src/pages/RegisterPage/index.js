@@ -39,14 +39,14 @@ const RegisterPage = () => {
     }
 
     return ( 
-        <div>
-            <h1>Register</h1>
+        <div className="container">
             <form onSubmit={handleSubmit}>
+            <h1 className="page-header_text">Register</h1>
                     <input 
                         className="form__data"
-                        type="text" 
+                        type="email" 
                         name="login" 
-                        placeholder="enter login" 
+                        placeholder="enter email" 
                         onChange={handleChange} 
                         value={state.login} 
                     />
@@ -66,7 +66,7 @@ const RegisterPage = () => {
                         name="reppassword" 
                         value={state.reppassword} 
                     />
-                <button className="form__btn">Register</button>
+                <button className="main-btn">Register</button>
                 {
                     error != ""?
                     <p style={{color: "red"}}>{error}</p>

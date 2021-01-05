@@ -31,12 +31,26 @@ const LoginPage = () => {
     }
 
     return ( 
-        <div>
-            <h1>Register</h1>
-            <form className="login__form" onSubmit={handleSubmit}>
-                <input type="text" name="login" onChange={handleChange} value={state.login} />
-                <input type="password" onChange={handleChange} name="password" value={state.password} />
-                <button>Zaloguj</button>
+        <div className="container">
+            <form onSubmit={handleSubmit}>
+            <h1 className="page-header_text">Login</h1>
+                <input 
+                    className="form__data"
+                    type="email" 
+                    name="login"
+                    placeholder="Enter email..." 
+                    onChange={handleChange} 
+                    value={state.login} 
+                />
+                <input 
+                    className="form__data"
+                    type="password"
+                    onChange={handleChange} 
+                    name="password" 
+                    placeholder="Enter password..." 
+                    value={state.password} 
+                />
+                <button className="main-btn">Log in</button>
                 {
                     error != ""?
                     <p style={{color: "red"}}>{error}</p>

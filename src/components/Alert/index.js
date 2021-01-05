@@ -2,7 +2,7 @@ import React  from "react";
 
 const Alert = ({children}) => {
     return ( 
-        <div style={{background: "#770000"}}>
+        <div className="alert">
             {children}
         </div>
      );

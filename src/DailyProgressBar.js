@@ -2,7 +2,7 @@ import React from "react";
 
 const INITIAL_OFFSET = 25;
 const circleConfig = {
-  viewBox: '-5 -5 300 400',
+  viewBox: '-5 -5 90 90',
   x: '17',
   y: '17',
   radio: '15.91549430918954'
