@@ -5,7 +5,7 @@ import TasksListItem from "../TasksListItem";
 
 const TasksList = ({ tasks, listType, handleClickDeleteTask = () => {}, handleCheckboxChangeTask = () =>{} }) => {
     return ( 
-        <ul className="tasks__list">
+        <ul>
             {tasks.map((el, index) => {
               if(listType === "addTasks")
                 return (
@@ -28,7 +28,7 @@ const TasksList = ({ tasks, listType, handleClickDeleteTask = () => {}, handleCh
                   />
                 )
               else
-                return <li>{el}</li>
+                return <li className="tasks__task-item">{el}</li>
             })}
         </ul>
      );

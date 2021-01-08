@@ -1,7 +1,7 @@
 import React, { useState }  from "react";
 import firebase from "firebase";
 
-const RegisterPage = () => {
+const RegisterPage = (props) => {
     const auth = firebase.auth()
     const [state, setState] = useState({
         login:"",
@@ -31,7 +31,7 @@ const RegisterPage = () => {
         auth
             .createUserWithEmailAndPassword(login, password)
             .then(res =>{
-                alert("registered")
+                props.history.push("/user/addtasks")
             })
             .catch(err =>{
                 setError(err.message)

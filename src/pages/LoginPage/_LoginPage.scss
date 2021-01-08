@@ -1,34 +1,20 @@
 @import "./variables.scss";
 
-.login__form {
+.form__form {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 300px;
 }
+
 .form__data {
   border: 2px solid $primary-color;
   display: block;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
-  margin-top: 10px;
+  margin: 7px 0;
   &[placeholder] {
     font-family: "Blatant", sans-serif;
-  }
-}
-
-.main-btn {
-  background-color: $secondary-color;
-  color: #fff;
-  border: none;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 60px;
-  font-family: "Blatant", sans-serif;
-  &:hover {
-    background-color: #ff5c61;
-    transition: 0.5s;
   }
 }

@@ -18,8 +18,7 @@ const Navbar = (props) => {
                     contextState.userLogged ?
                     <>
                         <Link to="/user/tasks" className="main-nav__link">Tasks</Link>
-                        <Link to="/user/addtasks" className="main-main-nav__link">Add Tasks</Link>
-                        <button className="main-btn" onClick={handleClickLogout}>Logout</button>
+                        <button className="btn__logout" onClick={handleClickLogout}>Logout</button>
                     </>
                     :
                     <>

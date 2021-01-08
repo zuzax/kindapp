@@ -1,7 +1,7 @@
 import React, { useState }  from "react";
 import firebase from "firebase";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
     const auth = firebase.auth()
     const [state, setState] = useState({
         login:"",
@@ -21,9 +21,12 @@ const LoginPage = () => {
         e.preventDefault()
         const {login, password} = state
 
-        auth.signInWithEmailAndPassword(login, password)
+        auth
+            .signInWithEmailAndPassword(login, password)
             .then(res =>{
-                alert("logged")
+               setTimeout(()=>{
+                props.history.push("/user/tasks")
+               }, 100)
             })
             .catch(err =>{
                 setError(err.message)

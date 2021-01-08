@@ -2,7 +2,7 @@ import React from "react";
 
 const INITIAL_OFFSET = 25;
 const circleConfig = {
-  viewBox: '-5 -5 90 90',
+  viewBox: '-10 -10 100 100',
   x: '17',
   y: '17',
   radio: '15.91549430918954'
@@ -38,11 +38,14 @@ const CircleProgressBarBase = ({
                     strokeDashoffset={INITIAL_OFFSET}
                     strokeWidth="10"
                 />
-                {/* <g className="circle-label">
-                    <text x="50%" y="50%" className="circle-percentage">
+                <g className="circle-label">
+                    <text 
+                        x="10%"
+                        y="20%" 
+                        className="circle-percentage">
                         {percentage}%
                     </text>
-                </g> */}
+                </g> 
             </svg>
         </figure>
     );
