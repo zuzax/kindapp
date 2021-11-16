@@ -3,12 +3,13 @@ import firebase from 'firebase'
 import Calendar from 'react-calendar';
 import TasksList from "../../components/TasksList";
 import DailyProgressBar from "../../DailyProgressBar";
+import Quote from './Quote'
 
 const UserTasksPage = (props) => {
     const firestore = firebase.firestore()
     const [tasks, setTasks] = useState([])
     const [selectedDate, setSelectedDate] = useState(new Date())
-    const [percent, setPercent] = useState(0)
+    // const [percent, setPercent] = useState(0)
     const [url, setUrl] = useState("")
 
     // zmiana state dla chechkboxa
@@ -71,11 +72,6 @@ const UserTasksPage = (props) => {
         .catch(err => {
             console.error(err);
         });
-        // fetch("https://api.thecatapi.com/v1/images/search")
-        // .then(resp => resp.json())
-        // .then(data => {
-        //     setUrl(data[0].url)          
-        // })
     }, [])
     //
 
@@ -221,15 +217,12 @@ const UserTasksPage = (props) => {
    
     return (
         <>
-        {/* <div className="fullScreen">
-            <img src={url} className="cat__img" />
-            <button class="main-btn">Close</button>
-        </div> */}
         <div className="tasks__container">
             <div className="tasks__progress-container">
                 <DailyProgressBar 
                     trailStrokeColor="#9877e8"
                     strokeColor="#ff8084"
+                    className="progress-bar"
                     percentage={calculateDidTasksPercent()} 
                 />
                 <TasksList
@@ -245,9 +238,7 @@ const UserTasksPage = (props) => {
                     onChange={handleCalendarDateChange}
                     value={selectedDate}
                 />
-                <div>
-                    <p style={{margin: 10}}>{url}</p>
-                </div>
+                <Quote url={url} />
             </div>
             </div>
         </>

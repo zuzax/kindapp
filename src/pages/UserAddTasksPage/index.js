@@ -2,7 +2,6 @@ import React, {useEffect, useState}  from "react";
 import firebase from 'firebase'
 import TasksList from "../../components/TasksList"
 import Alert from "../../components/Alert";
-// import {ReactComponent as Tree} from '../../img/tree.svg'; 
 
 
 const UserAddTasksPage = (props) => {
@@ -64,7 +63,7 @@ const UserAddTasksPage = (props) => {
 
     return (
         <>
-        <div className="container">
+        <div className="add-task__container">
             <div className="form__wrapper">
                 <h1 className="page-header_text">Add habbits to improve:</h1>
             <form className ="form__form" onSubmit={handleSubmit}>

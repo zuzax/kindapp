@@ -5,7 +5,7 @@ import TasksListItem from "../TasksListItem";
 
 const TasksList = ({ tasks, listType, handleClickDeleteTask = () => {}, handleCheckboxChangeTask = () =>{} }) => {
     return ( 
-        <ul>
+        <ul className="tasks__list">
             {tasks.map((el, index) => {
               if(listType === "addTasks")
                 return (

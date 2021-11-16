@@ -39,42 +39,44 @@ const RegisterPage = (props) => {
     }
 
     return ( 
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-            <h1 className="page-header_text">Register</h1>
-                    <input 
-                        className="form__data"
-                        type="email" 
-                        name="login" 
-                        placeholder="enter email" 
-                        onChange={handleChange} 
-                        value={state.login} 
-                    />
-                    <input 
-                        className="form__data"
-                        type="password"
-                        name="password"
-                        placeholder="enter password" 
-                        onChange={handleChange} 
-                        value={state.password} 
-                    />
-                    <input 
-                        className="form__data"
-                        type="password"
-                        placeholder="repeat password" 
-                        onChange={handleChange}
-                        name="reppassword" 
-                        value={state.reppassword} 
-                    />
-                <button className="main-btn">Register</button>
-                {
-                    error != ""?
-                    <p style={{color: "red"}}>{error}</p>
-                    :
-                    ""
-        
-                }
-            </form>
+        <div className="tasks__container">
+            <div className="form__wrapper">
+                <form onSubmit={handleSubmit}>
+                <h1 className="page-header_text">Register</h1>
+                        <input 
+                            className="form__data"
+                            type="email" 
+                            name="login" 
+                            placeholder="enter email" 
+                            onChange={handleChange} 
+                            value={state.login} 
+                        />
+                        <input 
+                            className="form__data"
+                            type="password"
+                            name="password"
+                            placeholder="enter password" 
+                            onChange={handleChange} 
+                            value={state.password} 
+                        />
+                        <input 
+                            className="form__data"
+                            type="password"
+                            placeholder="repeat password" 
+                            onChange={handleChange}
+                            name="reppassword" 
+                            value={state.reppassword} 
+                        />
+                    <button className="main-btn">Register</button>
+                    {
+                        error != ""?
+                        <p style={{color: "red"}}>{error}</p>
+                        :
+                        ""
+            
+                    }
+                </form>
+            </div>
         </div>
      );
 }

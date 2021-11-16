@@ -34,7 +34,8 @@ const LoginPage = (props) => {
     }
 
     return ( 
-        <div className="container">
+        <div className="tasks__container">
+            <div className="form__wrapper">
             <form onSubmit={handleSubmit}>
             <h1 className="page-header_text">Login</h1>
                 <input 
@@ -59,9 +60,9 @@ const LoginPage = (props) => {
                     <p style={{color: "red"}}>{error}</p>
                     :
                     ""
-        
                 }
             </form>
+            </div>
         </div>
      );
 }

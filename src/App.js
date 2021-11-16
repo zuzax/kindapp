@@ -3,10 +3,6 @@ import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import firebase from 'firebase'
 import context from "./contextApi/context";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'
-import AddTaskForm from "./AddTaskForm";
-import DailyProgressBar from "./DailyProgressBar"
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -19,24 +15,24 @@ import UserAddTasksPage from "./pages/UserAddTasksPage";
 import Navbar from "./components/Navbar";
 
 const App = () => {
-    const auth = firebase.auth()
-    const [contextState, setContextState] = useContext(context)
+    // const auth = firebase.auth()
+    // const [contextState, setContextState] = useContext(context)
 
-    useEffect(() =>{
-        auth.onAuthStateChanged((user) =>{
-            if(user){
-                setContextState({
-                    ...contextState,
-                    userLogged: true
-                })
-            }else{
-                setContextState({
-                    ...contextState,
-                    userLogged: false
-                })
-            }
-        })
-    }, [])
+    // useEffect(() =>{
+    //     auth.onAuthStateChanged((user) =>{
+    //         if(user){
+    //             setContextState({
+    //                 ...contextState,
+    //                 userLogged: true
+    //             })
+    //         }else{
+    //             setContextState({
+    //                 ...contextState,
+    //                 userLogged: false
+    //             })
+    //         }
+    //     })
+    // }, [])
 
     
     return (

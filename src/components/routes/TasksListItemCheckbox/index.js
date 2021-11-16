@@ -8,6 +8,7 @@ const TasksListItemCheckbox = ({index, name, isChecked, disabled, handleCheckbox
                 type="checkbox" 
                 checked={isChecked}
                 disabled={disabled}
+                style={{float: "right", marginTop: -2}}
                 onChange={() => handleCheckboxChange(index)}
             />
         </li>
